@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20160308192518) do
   create_table "items", force: :cascade do |t|
     t.string   "name",                       null: false
     t.boolean  "completed",  default: false
-    t.date     "goal_date"
+    t.date     "goal_dates"
     t.integer  "list_id"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20160308192518) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "fist_name",                           null: false
+    t.string   "first_name",                          null: false
     t.string   "last_name",                           null: false
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
