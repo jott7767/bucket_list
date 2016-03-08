@@ -15,17 +15,18 @@ h1 {
   width: 200px;
   margin: 5px;
   border-radius: 5px;
-  background-color: blue;
+  background-color: gray;
+  float:left;
 }
 
+hr {
+  clear:left;
+}
 
 .container {
-  color: #fff;
   text-align: center;
 }
 
 .header {
-
-  background-color: gray;
   text-align: center;
 }
