@@ -1,1 +1,16 @@
-<h1>Bucket List name: <%=
+<h1>Bucket List name: <%= @list.name %></h1>
+
+
+<% if @items.any? %>
+      <div class= "item_block">
+        <ul>
+        <% @items.each do |list| %>
+          <%= item.name %>
+        <% end %>
+        </ul>
+      </div>
+<% else %>
+  <h2>No Listed Items</h2>
+  <hr />
+<% end %>
+<%= link_to 'New Item', new_user_list_item_path(current_user, @list)%></h5>
