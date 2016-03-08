@@ -1,33 +1,30 @@
 <div class="header">
-<h1>Welcome to the Bucket List Online Manager!</h1>
+<h1>Welcome to the Bucket List Online Manager!</h1><br />
 
 <p>Where we make your dreams come true</p>
-<p>....or else....</p>
+<p>....or else....</p><br />
+<h3>Bucket Lists for user: <%= current_user.first_name %> </h3>
+<%= button_to 'Log Out', destroy_user_session_path, method: :delete %>
 </div>
 
 <hr />
 <div class="container">
-<h3>Bucket Lists for user: <%= current_user.first_name %> </h3>
-<% if @lists.any? %>
-
-<%= button_to 'Log Out', destroy_user_session_path, method: :delete %>
-<hr />
-<h2>Bucket Lists for user: <%= current_user.first_name %> </h2>
 <% if current_user.lists.any? %>
-
-      <div class= "list_block">
         <% current_user.lists.each do |list| %>
+        <div class= "list_block">
           <%= link_to "#{list.name} Bucket List", list_path(list) %><br />
           <%= list.date %>
+        </div>
+        
         <% end %>
-      </div>
+     
 <% else %>
   <p>No Bucket Lists</p>
 <% end %>
 
 </div>
 
-
-<%= button_to 'New List', new_list_path(current_user)%></h5>
+<hr />
+<%= link_to 'New List', new_list_path %></h5>
 
 
