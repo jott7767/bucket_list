@@ -1,2 +1,11 @@
-<h1>Lists#new</h1>
-<p>Find me in app/views/lists/new.html.erb</p>
+<h2> Make a new bucket list! <h2>
+<%= form_for @list do |f| %>
+  
+  <%= f.label :name %>
+  <%= f.text_field :name, required: true %>
+
+  <%= f.label :phone %>
+  <%= f.date :date %>
+
+  <%= f.submit %>
+<% end %>
