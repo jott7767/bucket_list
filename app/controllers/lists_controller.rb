@@ -1,4 +1,6 @@
 class ListsController < ApplicationController
+  before_action :list, only: [:show, :edit, :update, :destroy]
+
   def index
     @lists = current_user.lists.all
   end
