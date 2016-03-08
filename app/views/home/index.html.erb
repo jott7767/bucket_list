@@ -1,7 +1,12 @@
+<div class="header">
 <h1>Welcome to the Bucket List Online Manager!</h1>
+<p>Where we make your dreams come true</p>
+<p>....or else....</p>
+</div>
 
 <hr />
-<h2>Bucket Lists for user: <%= current_user.first_name %> </h2>
+<div class="container">
+<h3>Bucket Lists for user: <%= current_user.first_name %> </h3>
 <% if @lists.any? %>
       <div class= "list_block">
         <% @list.each do |list| %>
@@ -9,8 +14,9 @@
         <% end %>
       </div>
 <% else %>
-  <h2>No Bucket Lists</h2>
-  <hr />
+  <p>No Bucket Lists</p>
 <% end %>
-<%= link_to 'New List', new_user_list_path(current_user)%></h5>
+<%= link_to 'New List', new_list_path(current_user)%></h5>
+</div>
+
 
