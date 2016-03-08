@@ -1,16 +1,17 @@
 <h1>Welcome to the Bucket List Online Manager!</h1>
-
+<%= button_to 'Log Out', destroy_user_session_path, method: :delete %>
 <hr />
 <h2>Bucket Lists for user: <%= current_user.first_name %> </h2>
-<% if @lists.any? %>
+<% if current_user.lists.any? %>
       <div class= "list_block">
-        <% @list.each do |list| %>
-          <%= link_to "#{list.name} Bucket List", user_lists_path(current_user, list) %>
+        <% current_user.lists.each do |list| %>
+          <%= link_to "#{list.name} Bucket List", list_path(list) %><br />
+          <%= list.date %>
         <% end %>
       </div>
 <% else %>
   <h2>No Bucket Lists</h2>
   <hr />
 <% end %>
-<%= link_to 'New List', new_user_list_path(current_user)%></h5>
+<%= button_to 'New List', new_list_path(current_user)%></h5>
 

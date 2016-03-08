@@ -1,2 +1,12 @@
-<h1>Lists#new</h1>
-<p>Find me in app/views/lists/new.html.erb</p>
+<h1>New List</h1>
+
+<%= form_for @list do |f| %>
+ 
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  
+  <%= f.label :date %>
+  <%= f.date_field :date %>
+  
+  <%= f.submit %>
+<% end %>
