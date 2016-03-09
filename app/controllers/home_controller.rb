@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def index
+    @users = User.all
     @lists = current_user.lists.all
   end
 

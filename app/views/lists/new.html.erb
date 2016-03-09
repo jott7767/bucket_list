@@ -4,10 +4,10 @@
 <%= form_for @list do |f| %>
  
   <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name, required: true %>
   
   <%= f.label :date %>
-  <%= f.date_field :date %>
+  <%= f.date_field :date, required: true %>
   
   <%= f.submit %>
 <% end %>

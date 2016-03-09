@@ -13,7 +13,8 @@
         <% current_user.lists.each do |list| %>
         <div class= "list_block">
           <%= link_to "#{list.name} Bucket List", list_path(list) %><br />
-          <%= list.date %>
+          <p>Date Created: <%= list.date %> 
+          <br/> Created by: <%= current_user.first_name %>  </p>
         </div>
         
         <% end %>
@@ -24,7 +25,38 @@
 
 </div>
 
+
 <hr />
-<%= link_to 'New List', new_list_path %></h5>
+<div class = 'button_link'>
+  <%= link_to 'New List', new_list_path %></h5>
+</div>
+
+<hr />
+
+<div class = 'all_users_lists'>
+<h2>Other Users Lists</h2>
+  <% if @users.any? %>
+    <% @users.each do |user| %>
+      <% if user.lists.any? %>
+        <% user.lists.each do |list| %>
+          <div class= "list_block">
+            <%= link_to "#{list.name} Bucket List", list_path(list) %><br />
+            <p>Date Created: <%= list.date %> 
+            <br/> Created by: <%= user.first_name %>  </p>
+          </div>
+        <% end %>
+      
+      <% else %>
+        <p>There are more users, but no more lists </p>
+      <% end %>
+
+    <% end %>
+
+  <% else %>
+    <p>No More Bucket Lists</p>
+  <% end %>
+</div>
+
+
 
 

@@ -11,11 +11,11 @@ h1 {
 
 
 .list_block {
-  height: 200px;
+  height: 75px;
   width: 200px;
   margin: 5px;
   border-radius: 5px;
-  background-color: gray;
+  background-color: hsla(270, 51%, 33%, 0.84);
   float:left;
 }
 
@@ -29,4 +29,11 @@ hr {
 
 .header {
   text-align: center;
+}
+
+a {
+  color: hsla(42, 85%, 39%, 1);
+  text-decoration: none;
+  font-family: Ariel;
+
 }
