@@ -10,5 +10,5 @@
 <% else %>
   <h2> <%= link_to 'There are no items here so set some goals', new_list_item_path(@list) %> </h2>
 <% end %>
-
+<%= link_to "Add Item", new_list_item_path(@list) %> |
 <%= link_to 'Back', '/' %>
