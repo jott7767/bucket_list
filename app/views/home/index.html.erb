@@ -36,6 +36,17 @@
   <%= link_to 'New List', new_list_path %></h5>
 </div>
 
+<br />
+<div class= "recently_completed">
+ 
+ <% @items.each do |item| %>
+  <% if item.completed == true %>
+    <p>Item: <%= item.name %> recently completed!</p>
+  <% end %>
+ <% end %>
+</div>
+
+
 <hr />
 
 <div class = 'all_users_lists'>
