@@ -1,6 +1,7 @@
 body {
   background:url('http://1.bp.blogspot.com/_5Z2qPKcYFhI/Sxe-n9_w3BI/AAAAAAAAAAo/Z5_3d5ETyYM/S1600-R/SandyLohheaderpicture.jpg') no-repeat;
   background-size: cover;  
+  color: hsla(25, 100%, 57%, 1);
 }
 h1 {
   background-color: rgba(255, 0, 0, 0.4);
@@ -17,6 +18,11 @@ h1 {
   border-radius: 5px;
   background-color: hsla(270, 51%, 33%, 0.84);
   float:left;
+}
+
+.list_block:hover{
+  background-color: hsla(270, 51%, 56%, 0.84);
+
 }
 
 hr {
@@ -36,4 +42,21 @@ a {
   text-decoration: none;
   font-family: Ariel;
 
+}
+
+.button_link{
+  margin-left: 40%;
+  height: 75px;
+  width: 200px;
+  border-radius: 5px;
+  background-color: hsla(238, 100%, 47%, 1);
+  font-size: 24px;
+  text-align: center;
+  font: Ariel;
+  
+}
+
+.button_link:hover {
+  background-color: hsla(238, 100%, 69%, 1);
+  
 }
