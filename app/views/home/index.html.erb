@@ -16,6 +16,7 @@
 <div class="container">
 <h2>Bucket Lists for user: <%= current_user.first_name %> </h2>
 
+
 <% if current_user.lists.any? %>
         <% current_user.lists.each do |list| %>
         <div class= "list_block">
@@ -41,7 +42,7 @@
 <h2>Other Users Lists</h2>
   <% if @users.any? %>
     <% @users.each do |user| %>
-      <% if user.lists.any? %>
+      <% if user.lists.any? && user != current_user %>
         <% user.lists.each do |list| %>
           <div class= "list_block">
             <%= link_to "#{list.name}", list_path(list) %><br />
@@ -50,6 +51,9 @@
           </div>
         <% end %>
       <% end %>  
+      <% else %>
+        <p>There are more users, but no more lists </p>
+      <% end %>
     <% end %>
   <% else %>
     <p>No Bucket Lists</p>
