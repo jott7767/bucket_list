@@ -1,37 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+
 <div class="header">
 <h1>Welcome to the Bucket List Online Manager!</h1>
-<%= button_to 'Log Out', destroy_user_session_path, method: :delete %>
-<br />
 <p>Where we make your dreams come true</p>
-<p>....or else....</p><br />
-<h3>Bucket Lists for user: <%= current_user.first_name %> </h3>
+<p>....or else....</p>
 <%= button_to 'Log Out', destroy_user_session_path, method: :delete %>
 </div>
 
 <hr />
+
 <div class="container">
-
-<h3>Bucket Lists for user: <%= current_user.first_name %> </h3>
-<% if @lists.any? %>
-
-<hr />
 <h2>Bucket Lists for user: <%= current_user.first_name %> </h2>
-<% end %>
 
 <% if current_user.lists.any? %>
         <% current_user.lists.each do |list| %>
         <div class= "list_block">
-          <%= link_to "#{list.name} Bucket List", list_path(list) %><br />
+          <%= link_to "#{list.name}", list_path(list) %><br />
+          <p>Items: <%= list.items.count %></p>
           <p>Date Created: <%= list.date %> 
-          <br/> Created by: <%= current_user.first_name %>  </p>
         </div>
-        
         <% end %>
-     
 <% else %>
   <p>No Bucket Lists</p>
 <% end %>
-
 </div>
 
 
@@ -49,20 +44,15 @@
       <% if user.lists.any? %>
         <% user.lists.each do |list| %>
           <div class= "list_block">
-            <%= link_to "#{list.name} Bucket List", list_path(list) %><br />
+            <%= link_to "#{list.name}", list_path(list) %><br />
             <p>Date Created: <%= list.date %> 
             <br/> Created by: <%= user.first_name %>  </p>
           </div>
         <% end %>
-      
-      <% else %>
-        <p>There are more users, but no more lists </p>
-      <% end %>
-
+      <% end %>  
     <% end %>
-
   <% else %>
-    <p>No More Bucket Lists</p>
+    <p>No Bucket Lists</p>
   <% end %>
 </div>
 
