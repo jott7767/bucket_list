@@ -1,2 +1,14 @@
-<h1>Lists#show</h1>
-<p>Find me in app/views/lists/show.html.erb</p>
+<h1><%= @list.name %></h1>
+
+<% if @list.items.any? %>
+  <% @list.items.each do |item| %>
+    <div>
+      <%= item.name %>
+      <%= item.goal_dates %>
+    </div>
+  <% end %>
+<% else %>
+  <h2> <%= link_to 'There are no items here so set some goals', new_list_item_path(@list) %> </h2>
+<% end %>
+
+<%= link_to 'Back', '/' %>

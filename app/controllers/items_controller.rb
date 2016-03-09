@@ -1,13 +1,14 @@
 class ItemsController < ApplicationController
 
-  before_action :item, except: [:new]
 
   def new
+    @list = List.find(params[:list_id])
     @item = Item.new
   end
 
   def create
-    @item = @list.create_item(item_params)
+    @list = List.find(params[:list_id])
+    @item = @list.items.create(item_params)
     redirect_to list_path(@list)
   end
 
@@ -35,8 +36,6 @@ private
     params.require(:item).permit(:name, :completed, :goal_dates)
   end 
 
-  def item
-      @item = @list.item 
-    end 
+ 
 
 end

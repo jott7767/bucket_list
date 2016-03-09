@@ -1,2 +1,12 @@
-<h1>Items#new</h1>
-<p>Find me in app/views/items/new.html.erb</p>
+<h1>Make a New Item For your Bucket List</h1>
+<%= form_for [@list, @item] do |f| %>
+
+<%= f.label :name %>
+<%= f.text_field :name, placeholder: 'goal' %>
+
+<%= f.label :goal_dates %>
+<%= f.date_field :goal_dates %>
+
+<%= f.submit %>
+
+<% end %>
