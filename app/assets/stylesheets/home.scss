@@ -3,21 +3,22 @@ body {
   background-size: cover;  
   color: hsla(25, 100%, 57%, 1);
 }
+
 h1 {
-  background-color: rgba(255, 0, 0, 0.4);
-  text-align: center;
-  color: #2c1e4f;
+  color: #fff;
 
 }
 
+h1, 
+p,
+h2 {
+  text-align: center;
+}
 
 .list_block {
-  height: 75px;
-  width: 200px;
-  margin: 5px;
   border-radius: 5px;
   background-color: hsla(270, 51%, 33%, 0.84);
-  float:left;
+  align-content: center;
 }
 
 .list_block:hover{
@@ -29,11 +30,18 @@ hr {
   clear:left;
 }
 
-.container {
-  text-align: center;
-}
+
 
 .header {
+  align-content: center;
+  background: url('http://www.starwallpapers.com/walls/mountains_hd_widescreen_high_resolutions_backgrounds_wallpapers_laptop_desktop_14-HD.jpg') no-repeat;
+  background-size: cover;
+  padding-top: 200px;
+  margin-top: -30px;
+  width: 100%;
+  text-align: center;
+  height: 700px;
+  background-color: black;
   text-align: center;
 }
 
@@ -51,12 +59,23 @@ a {
   border-radius: 5px;
   background-color: hsla(238, 100%, 47%, 1);
   font-size: 24px;
-  text-align: center;
   font: Ariel;
-  
+  text-align: center;
 }
+
+
 
 .button_link:hover {
   background-color: hsla(238, 100%, 69%, 1);
   
 }
+
+
+.bottom-half {
+  padding-top: 10px;
+  background: #fff;
+  height: 800px;
+  margin-top: -23px;
+}
+
+
