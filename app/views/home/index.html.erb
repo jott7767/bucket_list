@@ -3,7 +3,6 @@
   <p>Where we make your dreams come true ...or else.</p>
   <%= button_to 'Log Out', destroy_user_session_path, method: :delete %>
 </div>
-
 <br />
 <div class='row bottom-half'>
   <div class="container col s12 m8 l8 current_user_list">
@@ -29,12 +28,26 @@
               <p>Date Created: <%= list.date %> 
               <br/> Created by: <%= user.first_name %>  </p>
             </div>
-          <% end %>  
+          <% end %>
         <% end %>
-      <% end %>  
-    <% end %>  
-  </div>
+      <% end %>
+    <% end %>        
+
+<hr />
+<div class = 'button_link'>
+  <%= link_to 'New List', new_list_path %></h5>
 </div>
+
+<br />
+<div class= "recently_completed">
+ 
+ <% @items.each do |item| %>
+  <% if item.completed == true %>
+    <p>Item: <%= item.name %> recently completed!</p>
+  <% end %>
+<% end %> 
+</div>
+
 
 
 

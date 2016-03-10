@@ -5,6 +5,14 @@
     <div>
       <%= item.name %>
       <%= item.goal_dates %>
+
+      <%= form_for [@list, item] do |f| %>
+        <%= f.check_box :completed, id: item.id %>
+        <%= f.label 'completed', for: item.id%>
+        
+        <%= f.submit %>
+      <% end %>
+
     </div>
   <% end %>
 <% else %>

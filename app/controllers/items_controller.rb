@@ -16,10 +16,10 @@ class ItemsController < ApplicationController
   end 
 
   def update
-    @list = current_user.list.find(params[:list_id])
-    @item = @list.item.find(params[:id])
-    if @item.update
-      redirect_to lists_path(current_user)
+    @list = current_user.lists.find(params[:list_id])
+    @item = @list.items.find(params[:id])
+    if @item.update(item_params)
+      redirect_to list_path(@list)
     else
       render :edit
     end
@@ -27,7 +27,7 @@ class ItemsController < ApplicationController
 
   def destroy
     @item.destroy
-    redirect_to lists_path(current_user)
+    redirect_to list_path(@list)
   end 
 
 
