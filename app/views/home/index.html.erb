@@ -1,64 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-
 <div class="header">
-<h1>Welcome to the Bucket List Online Manager!</h1>
-<p>Where we make your dreams come true</p>
-<p>....or else....</p>
-<%= button_to 'Log Out', destroy_user_session_path, method: :delete %>
+  <h1>The Bucket List</h1>
+  <p>Where we make your dreams come true ...or else.</p>
+  <%= button_to 'Log Out', destroy_user_session_path, method: :delete %>
 </div>
-
-<hr />
-
-<div class="container">
-<h2>Bucket Lists for user: <%= current_user.first_name %> </h2>
-
-
-<% if current_user.lists.any? %>
-        <% current_user.lists.each do |list| %>
-        <div class= "list_block">
-          <%= link_to "#{list.name}", list_path(list) %><br />
-          <p>Items: <%= list.items.count %></p>
-          <p>Date Created: <%= list.date %> 
-        </div>
+<br />
+<div class='row bottom-half'>
+  <div class="container col s12 m8 l8 current_user_list">
+    <h2>Bucket Lists for user: <%= current_user.first_name %> </h2>
+    <% if current_user.lists.any? %>
+      <% current_user.lists.each do |list| %>
+      <div class="list_block center-align">
+        <%= link_to "#{list.name}", list_path(list) %><br />
+        <p>Items: <%= list.items.count %></p>
+        <p>Date Created: <%= list.date %></p> 
+      </div>
+      <% end %>
+    <% end %>
+  </div>    
+  <div class = 'center-align container col s12 m4 l4 offset-s6 all_users_lists'>
+    <h2>Other Users Lists</h2>
+    <% if @users.any? %>
+      <% @users.each do |user| %>
+        <% if user.lists.any? && user != current_user %>
+          <% user.lists.each do |list| %>
+            <div class= "container list_block">
+              <%= link_to "#{list.name}", list_path(list) %><br />
+              <p>Date Created: <%= list.date %> 
+              <br/> Created by: <%= user.first_name %>  </p>
+            </div>
+          <% end %>
         <% end %>
-<% else %>
-  <p>No Bucket Lists</p>
-<% end %>
-</div>
-
+      <% end %>
+    <% end %>        
 
 <hr />
 <div class = 'button_link'>
   <%= link_to 'New List', new_list_path %></h5>
 </div>
 
-<hr />
-
-<div class = 'all_users_lists'>
-<h2>Other Users Lists</h2>
-  <% if @users.any? %>
-    <% @users.each do |user| %>
-      <% if user.lists.any? && user != current_user %>
-        <% user.lists.each do |list| %>
-          <div class= "list_block">
-            <%= link_to "#{list.name}", list_path(list) %><br />
-            <p>Date Created: <%= list.date %> 
-            <br/> Created by: <%= user.first_name %>  </p>
-          </div>
-        <% end %>
-      <% end %>  
-    <% end %>
-  <% else %>
-    <p>No Bucket Lists</p>
+<br />
+<div class= "recently_completed">
+ 
+ <% @items.each do |item| %>
+  <% if item.completed == true %>
+    <p>Item: <%= item.name %> recently completed!</p>
   <% end %>
+<% end %> 
 </div>
 
 
-<hr />
 
 
 
