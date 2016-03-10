@@ -1,5 +1,7 @@
 <h1><%= @list.name %></h1>
 
+<%= button_to 'Delete this list', list_path(@list), method: :delete %>
+<hr />
 <% if @list.items.any? %>
   <% @list.items.each do |item| %>
     <div>
@@ -9,8 +11,9 @@
       <%= form_for [@list, item] do |f| %>
         <%= f.check_box :completed, id: item.id %>
         <%= f.label 'completed', for: item.id%>
-        
+    
         <%= f.submit %>
+        <%= button_to 'Delete', list_item_path(@list, item), method: :delete %>
       <% end %>
 
     </div>
@@ -18,5 +21,6 @@
 <% else %>
   <h2> <%= link_to 'There are no items here so set some goals', new_list_item_path(@list) %> </h2>
 <% end %>
+ 
 <%= link_to "Add Item", new_list_item_path(@list) %> |
 <%= link_to 'Back', '/' %>
