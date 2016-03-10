@@ -36,7 +36,7 @@ private
   end 
   
   def list
-    @list = List.find(params:list_id)
+    @list = List.find(params[:list_id])
   end
  
 

@@ -1,14 +1,19 @@
+<div class = "list_page_container">
+  <h1>Make a New Bucketlist</h1>
+  <p class= "funny_title">Maybe you have a new sense of adventure, or maybe you're bored and are just making this webiste for fun.  whatever your case, make your list here</p>
+  <div class = "new_list_container row"> 
+    <div class = "col s8 offset-s2 col m4 offset-m4 col l4 offset-l4">
+    <%= form_for @list, :html => {class: 'list_form'} do |f| %>
+     
+      <%= f.label :name %>
+      <%= f.text_field :name, required: true, :class => 'form_color'  %>
+      
+      <%= f.label :date %>
+      <%= f.date_field :date, required: true, :class => 'form_color' %>
+      
+      <%= f.submit "Create", :class => 'list_button' %>
+    <% end %>
+  </div>
+  </div>
 
-<h1>New List</h1>
-
-<%= form_for @list do |f| %>
- 
-  <%= f.label :name %>
-  <%= f.text_field :name, required: true %>
-  
-  <%= f.label :date %>
-  <%= f.date_field :date, required: true %>
-  
-  <%= f.submit %>
-<% end %>
-
+</div>

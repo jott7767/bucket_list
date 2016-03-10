@@ -1,5 +1,9 @@
-@import "materialize";
+@import "materialize/components/color";
+// $primary-color: !default;
+$secondary-color: black !default;
+@import 'materialize';
 @import "home";
 @import "items";
 @import "lists";
+
 
