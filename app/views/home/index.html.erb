@@ -1,16 +1,18 @@
-<div class="header">
+<div class="header center-align">
   <h1>The Bucket List</h1>
   <p>Where we make your dreams come true ...or else.</p>
-  <%= button_to 'Log Out', destroy_user_session_path, method: :delete %>
+  <br />
+  <%= button_to "New List", new_list_path, :class => 'waves-effect waves-light btn'%>
+  </div>
 </div>
 <br />
 <div class='row bottom-half'>
   <div class="container col s12 m8 l8 current_user_list">
-    <h2>Bucket Lists for user: <%= current_user.first_name %> </h2>
+    <h2>Bucket Lists for user: <%= current_user.first_name %> </h2> 
     <% if current_user.lists.any? %>
       <% current_user.lists.each do |list| %>
       <div class="list_block center-align">
-        <%= link_to "#{list.name}", list_path(list) %><br />
+        <%= link_to "#{list.name.upcase}", list_path(list) %><br />
         <p>Items: <%= list.items.count %></p>
         <p>Date Created: <%= list.date %></p> 
       </div>
@@ -24,9 +26,9 @@
         <% if user.lists.any? && user != current_user %>
           <% user.lists.each do |list| %>
             <div class= "container list_block">
-              <%= link_to "#{list.name}", list_path(list) %><br />
+              <%= link_to "#{list.name.upcase}", list_path(list) %><br />
               <p>Date Created: <%= list.date %> 
-              <br/> Created by: <%= user.first_name %>  </p>
+              <br/> Created by: <%= user.first_name.capitalize %>  </p>
             </div>
           <% end %>
         <% end %>
@@ -34,9 +36,6 @@
     <% end %>        
 
 <hr />
-<div class = 'button_link'>
-  <%= link_to 'New List', new_list_path %></h5>
-</div>
 
 <br />
 <div class= "recently_completed">

@@ -1,3 +1,4 @@
+
 body {
   background:url('http://1.bp.blogspot.com/_5Z2qPKcYFhI/Sxe-n9_w3BI/AAAAAAAAAAo/Z5_3d5ETyYM/S1600-R/SandyLohheaderpicture.jpg') no-repeat;
   background-size: cover;  
@@ -9,6 +10,11 @@ h1 {
 
 }
 
+h2 {
+  font-size: 36px;
+  color: #9575CD;
+}
+
 h1, 
 p,
 h2 {
@@ -17,8 +23,10 @@ h2 {
 
 .list_block {
   border-radius: 5px;
-  background-color: hsla(270, 51%, 33%, 0.84);
+  background-color: #ffcdd2;
   align-content: center;
+  margin-left: 200px;
+  margin-right: 200px;
 }
 
 .list_block:hover{
@@ -45,24 +53,18 @@ hr {
   text-align: center;
 }
 
+.header h1 {
+  font-family: 'Homemade Apple';
+}
+
+
+
 a {
   color: hsla(42, 85%, 39%, 1);
   text-decoration: none;
   font-family: Ariel;
 
 }
-
-.button_link{
-  margin-left: 40%;
-  height: 75px;
-  width: 200px;
-  border-radius: 5px;
-  background-color: hsla(238, 100%, 47%, 1);
-  font-size: 24px;
-  font: Ariel;
-  text-align: center;
-}
-
 
 
 .button_link:hover {
@@ -76,6 +78,10 @@ a {
   background: #fff;
   height: 800px;
   margin-top: -23px;
+}
+
+.logout {
+  clear:left
 }
 
 
