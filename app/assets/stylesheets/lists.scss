@@ -1,3 +1,58 @@
 // Place all the styles related to the lists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.list_page_container {
+  background: url('mountains.jpg');
+  background-size: cover;
+  height: 100%;
+  top: 0;
+  color: white;
+
+
+}
+
+.new_list_container {
+  font-size: 24px;
+  text-align: center;
+  background: hsla(27, 100%, 88%, 0.64);
+  color: black;
+
+}
+label {
+  color: black;
+  margin-bottom: black;
+
+}
+
+.form_color {
+  margin-bottom: black;
+}
+
+textarea:focus {
+  border-bottom: 1px solid black;
+}
+
+.list_form:focus {
+  border-bottom: 1px solid black;
+}
+.list_button {
+  border-radius: 10px;
+  background-color: hsla(27, 100%, 88%, 1);
+  border-style: solid 2px;
+  border-color: white;
+  font-size: 14px
+}
+
+.list_button:hover {
+  border-radius: 10px;
+  background-color: hsla(27, 100%, 67%, 1);
+  border-style: solid 2px;
+  border-color: white;
+}
+
+
+body, html {
+  height: 100%;
+  padding: 0;
+  margin-top: -16px;
+}
